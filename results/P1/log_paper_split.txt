@@ -1,0 +1,38 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795336998.107561   17460 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795337000.188633   17460 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+paper test split: 4888 clips  {'_silence_': 407, 'no': 405, 'left': 412, 'down': 406, 'on': 396, 'go': 402, 'yes': 419, 'stop': 411, '_unknown_': 407, 'off': 402, 'right': 396, 'up': 425}
+I0000 00:00:1795337004.837286   17460 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+features (4888, 49, 40, 1) in 42s
+
+==================== paper_split ====================
+<HOME>\AppData\Local\Programs\Python\Python313\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  fp32       acc  92.18%  (1s)
+  fp16       acc  92.23%  (1s)
+  dr_int8    acc  92.57%  (1s)
+  full_int8  acc  92.25%  (1s)
+
+N = 4888, bootstrap B = 10000
+variant      acc %    correct             95% CI
+fp32         92.18  4506/4888  [ 91.41,  92.92]
+fp16         92.23  4508/4888  [ 91.45,  92.98]
+dr_int8      92.57  4525/4888  [ 91.82,  93.31]
+full_int8    92.25  4509/4888  [ 91.49,  92.98]
+
+pair (A - B)            diff pp      95% paired CI  A-only  B-only  McNemar p
+fp32 - fp16               -0.04  [ -0.10,   0.00]       0       2      0.500
+fp32 - dr_int8            -0.39  [ -0.68,  -0.10]      16      35      0.011
+fp32 - full_int8          -0.06  [ -0.53,   0.41]      68      71      0.865
+fp16 - dr_int8            -0.35  [ -0.63,  -0.06]      17      34      0.024
+fp16 - full_int8          -0.02  [ -0.49,   0.45]      69      70      1.000
+dr_int8 - full_int8        0.33  [ -0.12,   0.80]      74      58      0.191
+
+If a paired CI contains 0 (and McNemar p > 0.05), do NOT rank those two variants.

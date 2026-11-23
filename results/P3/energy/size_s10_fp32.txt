@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 125812	   6544	  78448	 210804	  33774	kws_ptq_bench.elf

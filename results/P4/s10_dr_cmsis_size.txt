@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 153180	     96	 107704	 260980	  3fb74	..\..\results\P4\s10_dr_cmsis.elf

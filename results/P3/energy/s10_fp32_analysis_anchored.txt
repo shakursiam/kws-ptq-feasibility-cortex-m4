@@ -1,0 +1,20 @@
+run                          fs Hz   P_busy  P_sleep    P_act  busy s sleep s   act s  t_lat(trace) ms
+s10_fp32_run1.csv             52.0   125.56    43.35   132.80    10.0    14.8    35.2            175.8
+s10_fp32_run2.csv             52.0   126.03    43.92   132.89    10.0    14.8    35.2            175.8
+s10_fp32_run3.csv             52.0   125.61    43.81   132.69    10.0    14.8    35.2            175.8
+
+N runs = 3   (mean +/- std across runs), t_lat = 175.87 ms, Vbus = 3.289 V
+P_busy   (HAL_Delay, 180 MHz) =   125.73 +/- 0.26 mW
+P_sleep  (WFI Sleep, 180 MHz) =    43.70 +/- 0.30 mW
+P_active (inference)          =   132.79 +/- 0.10 mW
+E_marg vs busy  (Pa-Pb)*t     =    1.242 +/- 0.034 mJ
+E_marg vs sleep (Pa-Ps)*t     =   15.670 +/- 0.053 mJ
+E_tot           Pa*t          =   23.354 +/- 0.017 mJ
+t_lat from active-window length = 175.8 ms (includes ~1 sample of edge blur; Validate-on-target is the reference)
+
+ T_hop ms   P_avg busy-idle mW   P_avg WFI-idle mW   saving
+      200               131.94              122.04     7.5%
+      500               128.21               75.04    41.5%
+     1000               126.97               59.37    53.2%
+
+plot: results/P3/energy\s10_fp32_run1_trace.png / .pdf

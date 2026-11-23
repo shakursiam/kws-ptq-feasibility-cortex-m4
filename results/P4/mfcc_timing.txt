@@ -1,0 +1,5 @@
+reps=20
+49 frames, 40 MFCC: 9159506 cycles = 50.89 ms
+49 frames, 10 MFCC: 8739966 cycles = 48.56 ms
+one frame (40 MFCC): 186929 cycles = 1.038 ms
+checksum -7.209444046020508

@@ -1,0 +1,555 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795350511.447977   22156 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795350517.918749   22156 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+train: 36923 clips {'no': 3130, '_unknown_': 3077, 'go': 3106, 'off': 2970, 'left': 3037, 'stop': 3111, 'up': 2948, 'right': 3019, 'yes': 3228, 'down': 3134, 'on': 3086, '_silence_': 3077}
+val: 4443 clips {'stop': 350, 'down': 377, 'off': 373, 'go': 372, 'right': 363, '_unknown_': 370, 'yes': 397, 'no': 406, 'left': 352, 'on': 363, '_silence_': 370, 'up': 350}
+test: 4888 clips {'_silence_': 407, 'no': 405, 'left': 412, 'down': 406, 'on': 396, 'go': 402, 'yes': 419, 'stop': 411, '_unknown_': 407, 'off': 402, 'right': 396, 'up': 425}
+I0000 00:00:1795350526.029417   22156 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+features (36923, 49, 10, 1) (4443, 49, 10, 1) (4888, 49, 10, 1) in 371s
+Model: "DS-CNN-S"
++--------------------------------------------------------------------------+
+| Layer (type)                    | Output Shape           |       Param # |
+|---------------------------------+------------------------+---------------|
+| input_layer (InputLayer)        | (None, 49, 10, 1)      |             0 |
+|---------------------------------+------------------------+---------------|
+| conv2d (Conv2D)                 | (None, 25, 5, 64)      |         2,560 |
+|---------------------------------+------------------------+---------------|
+| batch_normalization             | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu (ReLU)                    | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| depthwise_conv2d                | (None, 25, 5, 64)      |           576 |
+| (DepthwiseConv2D)               |                        |               |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_1           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_1 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| conv2d_1 (Conv2D)               | (None, 25, 5, 64)      |         4,096 |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_2           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_2 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| depthwise_conv2d_1              | (None, 25, 5, 64)      |           576 |
+| (DepthwiseConv2D)               |                        |               |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_3           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_3 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| conv2d_2 (Conv2D)               | (None, 25, 5, 64)      |         4,096 |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_4           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_4 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| depthwise_conv2d_2              | (None, 25, 5, 64)      |           576 |
+| (DepthwiseConv2D)               |                        |               |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_5           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_5 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| conv2d_3 (Conv2D)               | (None, 25, 5, 64)      |         4,096 |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_6           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_6 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| depthwise_conv2d_3              | (None, 25, 5, 64)      |           576 |
+| (DepthwiseConv2D)               |                        |               |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_7           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_7 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| conv2d_4 (Conv2D)               | (None, 25, 5, 64)      |         4,096 |
+|---------------------------------+------------------------+---------------|
+| batch_normalization_8           | (None, 25, 5, 64)      |           256 |
+| (BatchNormalization)            |                        |               |
+|---------------------------------+------------------------+---------------|
+| re_lu_8 (ReLU)                  | (None, 25, 5, 64)      |             0 |
+|---------------------------------+------------------------+---------------|
+| global_average_pooling2d        | (None, 64)             |             0 |
+| (GlobalAveragePooling2D)        |                        |               |
+|---------------------------------+------------------------+---------------|
+| dense (Dense)                   | (None, 12)             |           780 |
++--------------------------------------------------------------------------+
+ Total params: 24,332 (95.05 KB)
+ Trainable params: 23,180 (90.55 KB)
+ Non-trainable params: 1,152 (4.50 KB)
+
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+<HOME>\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\trainers\epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/40
+
+Epoch 1: val_accuracy improved from None to 0.85888, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 1: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 26ms/step - accuracy: 0.7365 - loss: 0.8953 - val_accuracy: 0.8589 - val_loss: 0.5221 - learning_rate: 0.0010
+Epoch 2/40
+
+Epoch 2: val_accuracy did not improve from 0.85888
+577/577 - 13s - 22ms/step - accuracy: 0.8844 - loss: 0.3686 - val_accuracy: 0.8548 - val_loss: 0.4403 - learning_rate: 0.0010
+Epoch 3/40
+
+Epoch 3: val_accuracy improved from 0.85888 to 0.90479, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 3: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 13s - 23ms/step - accuracy: 0.9053 - loss: 0.2915 - val_accuracy: 0.9048 - val_loss: 0.2996 - learning_rate: 0.0010
+Epoch 4/40
+
+Epoch 4: val_accuracy did not improve from 0.90479
+577/577 - 13s - 23ms/step - accuracy: 0.9177 - loss: 0.2491 - val_accuracy: 0.8827 - val_loss: 0.3669 - learning_rate: 0.0010
+Epoch 5/40
+
+Epoch 5: val_accuracy improved from 0.90479 to 0.91470, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 5: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 14s - 24ms/step - accuracy: 0.9270 - loss: 0.2250 - val_accuracy: 0.9147 - val_loss: 0.2705 - learning_rate: 0.0010
+Epoch 6/40
+
+Epoch 6: val_accuracy did not improve from 0.91470
+577/577 - 14s - 24ms/step - accuracy: 0.9329 - loss: 0.2017 - val_accuracy: 0.9030 - val_loss: 0.3125 - learning_rate: 0.0010
+Epoch 7/40
+
+Epoch 7: val_accuracy did not improve from 0.91470
+577/577 - 14s - 24ms/step - accuracy: 0.9386 - loss: 0.1857 - val_accuracy: 0.8989 - val_loss: 0.3063 - learning_rate: 0.0010
+Epoch 8/40
+
+Epoch 8: val_accuracy improved from 0.91470 to 0.91807, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 8: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 14s - 25ms/step - accuracy: 0.9413 - loss: 0.1738 - val_accuracy: 0.9181 - val_loss: 0.2689 - learning_rate: 0.0010
+Epoch 9/40
+
+Epoch 9: val_accuracy did not improve from 0.91807
+577/577 - 15s - 25ms/step - accuracy: 0.9460 - loss: 0.1585 - val_accuracy: 0.8978 - val_loss: 0.3193 - learning_rate: 0.0010
+Epoch 10/40
+
+Epoch 10: val_accuracy did not improve from 0.91807
+577/577 - 14s - 25ms/step - accuracy: 0.9492 - loss: 0.1529 - val_accuracy: 0.9075 - val_loss: 0.3092 - learning_rate: 0.0010
+Epoch 11/40
+
+Epoch 11: val_accuracy did not improve from 0.91807
+577/577 - 14s - 25ms/step - accuracy: 0.9517 - loss: 0.1457 - val_accuracy: 0.8983 - val_loss: 0.3473 - learning_rate: 0.0010
+Epoch 12/40
+
+Epoch 12: val_accuracy did not improve from 0.91807
+
+Epoch 12: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+577/577 - 14s - 25ms/step - accuracy: 0.9530 - loss: 0.1374 - val_accuracy: 0.8893 - val_loss: 0.3833 - learning_rate: 0.0010
+Epoch 13/40
+
+Epoch 13: val_accuracy improved from 0.91807 to 0.92753, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 13: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 26ms/step - accuracy: 0.9656 - loss: 0.1049 - val_accuracy: 0.9275 - val_loss: 0.2354 - learning_rate: 5.0000e-04
+Epoch 14/40
+
+Epoch 14: val_accuracy improved from 0.92753 to 0.93113, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 14: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 25ms/step - accuracy: 0.9692 - loss: 0.0949 - val_accuracy: 0.9311 - val_loss: 0.2184 - learning_rate: 5.0000e-04
+Epoch 15/40
+
+Epoch 15: val_accuracy did not improve from 0.93113
+577/577 - 14s - 25ms/step - accuracy: 0.9721 - loss: 0.0891 - val_accuracy: 0.9233 - val_loss: 0.2478 - learning_rate: 5.0000e-04
+Epoch 16/40
+
+Epoch 16: val_accuracy did not improve from 0.93113
+577/577 - 15s - 26ms/step - accuracy: 0.9710 - loss: 0.0884 - val_accuracy: 0.9298 - val_loss: 0.2321 - learning_rate: 5.0000e-04
+Epoch 17/40
+
+Epoch 17: val_accuracy did not improve from 0.93113
+577/577 - 15s - 26ms/step - accuracy: 0.9742 - loss: 0.0810 - val_accuracy: 0.9284 - val_loss: 0.2407 - learning_rate: 5.0000e-04
+Epoch 18/40
+
+Epoch 18: val_accuracy did not improve from 0.93113
+
+Epoch 18: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+577/577 - 16s - 27ms/step - accuracy: 0.9726 - loss: 0.0827 - val_accuracy: 0.9291 - val_loss: 0.2273 - learning_rate: 5.0000e-04
+Epoch 19/40
+
+Epoch 19: val_accuracy improved from 0.93113 to 0.93315, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 19: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 26ms/step - accuracy: 0.9794 - loss: 0.0651 - val_accuracy: 0.9332 - val_loss: 0.2242 - learning_rate: 2.5000e-04
+Epoch 20/40
+
+Epoch 20: val_accuracy improved from 0.93315 to 0.93360, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 20: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 26ms/step - accuracy: 0.9824 - loss: 0.0593 - val_accuracy: 0.9336 - val_loss: 0.2314 - learning_rate: 2.5000e-04
+Epoch 21/40
+
+Epoch 21: val_accuracy did not improve from 0.93360
+577/577 - 14s - 25ms/step - accuracy: 0.9847 - loss: 0.0553 - val_accuracy: 0.9325 - val_loss: 0.2365 - learning_rate: 2.5000e-04
+Epoch 22/40
+
+Epoch 22: val_accuracy improved from 0.93360 to 0.93563, saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+
+Epoch 22: finished saving model to <DRIVE>\Research_2026\Conference_August\TinyML\Revised_Paper\results\P3\models\ds_cnn_s10_best.keras
+577/577 - 15s - 26ms/step - accuracy: 0.9837 - loss: 0.0557 - val_accuracy: 0.9356 - val_loss: 0.2289 - learning_rate: 2.5000e-04
+Epoch 23/40
+
+Epoch 23: val_accuracy did not improve from 0.93563
+577/577 - 15s - 25ms/step - accuracy: 0.9845 - loss: 0.0524 - val_accuracy: 0.9329 - val_loss: 0.2364 - learning_rate: 2.5000e-04
+Epoch 24/40
+
+Epoch 24: val_accuracy did not improve from 0.93563
+577/577 - 15s - 27ms/step - accuracy: 0.9863 - loss: 0.0503 - val_accuracy: 0.9314 - val_loss: 0.2399 - learning_rate: 2.5000e-04
+Epoch 25/40
+
+Epoch 25: val_accuracy did not improve from 0.93563
+577/577 - 15s - 26ms/step - accuracy: 0.9863 - loss: 0.0482 - val_accuracy: 0.9280 - val_loss: 0.2598 - learning_rate: 2.5000e-04
+Epoch 26/40
+
+Epoch 26: val_accuracy did not improve from 0.93563
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+577/577 - 15s - 26ms/step - accuracy: 0.9852 - loss: 0.0492 - val_accuracy: 0.9327 - val_loss: 0.2396 - learning_rate: 2.5000e-04
+Epoch 27/40
+
+Epoch 27: val_accuracy did not improve from 0.93563
+577/577 - 15s - 26ms/step - accuracy: 0.9892 - loss: 0.0410 - val_accuracy: 0.9336 - val_loss: 0.2330 - learning_rate: 1.2500e-04
+Epoch 28/40
+
+Epoch 28: val_accuracy did not improve from 0.93563
+577/577 - 14s - 25ms/step - accuracy: 0.9908 - loss: 0.0381 - val_accuracy: 0.9343 - val_loss: 0.2426 - learning_rate: 1.2500e-04
+Epoch 29/40
+
+Epoch 29: val_accuracy did not improve from 0.93563
+577/577 - 15s - 26ms/step - accuracy: 0.9903 - loss: 0.0375 - val_accuracy: 0.9341 - val_loss: 0.2490 - learning_rate: 1.2500e-04
+Epoch 30/40
+
+Epoch 30: val_accuracy did not improve from 0.93563
+
+Epoch 30: ReduceLROnPlateau reducing learning rate to 6.25000029685907e-05.
+577/577 - 15s - 26ms/step - accuracy: 0.9902 - loss: 0.0382 - val_accuracy: 0.9356 - val_loss: 0.2381 - learning_rate: 1.2500e-04
+Epoch 30: early stopping
+Restoring model weights from the end of the best epoch: 22.
+training 435s
+Saved artifact at '<HOME>\AppData\Local\Temp\tmpavcu3set'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 49, 10, 1), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 12), dtype=tf.float32, name=None)
+Captures:
+  2520386019280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386021008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386017744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387698960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387706064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387707024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1795351330.114161   22156 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1795351330.114658   22156 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1795351330.115229   22156 reader.cc:83] Reading SavedModel from: <HOME>\AppData\Local\Temp\tmpavcu3set
+I0000 00:00:1795351330.117089   22156 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1795351330.117308   22156 reader.cc:147] Reading SavedModel debug info (if present) from: <HOME>\AppData\Local\Temp\tmpavcu3set
+I0000 00:00:1795351330.128706   22156 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+I0000 00:00:1795351330.130550   22156 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1795351330.203028   22156 loader.cc:220] Running initialization op on SavedModel bundle at path: <HOME>\AppData\Local\Temp\tmpavcu3set
+I0000 00:00:1795351330.221757   22156 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 106546 microseconds.
+I0000 00:00:1795351330.242701   22156 dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+Saved artifact at '<HOME>\AppData\Local\Temp\tmphvc7fork'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 49, 10, 1), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 12), dtype=tf.float32, name=None)
+Captures:
+  2520386019280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386021008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386017744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387698960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387706064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387707024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1795351331.032853   22156 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1795351331.033441   22156 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1795351331.034003   22156 reader.cc:83] Reading SavedModel from: <HOME>\AppData\Local\Temp\tmphvc7fork
+I0000 00:00:1795351331.035624   22156 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1795351331.035826   22156 reader.cc:147] Reading SavedModel debug info (if present) from: <HOME>\AppData\Local\Temp\tmphvc7fork
+I0000 00:00:1795351331.047697   22156 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1795351331.120071   22156 loader.cc:220] Running initialization op on SavedModel bundle at path: <HOME>\AppData\Local\Temp\tmphvc7fork
+I0000 00:00:1795351331.138514   22156 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 104529 microseconds.
+Saved artifact at '<HOME>\AppData\Local\Temp\tmp6nchyia4'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 49, 10, 1), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 12), dtype=tf.float32, name=None)
+Captures:
+  2520386019280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386021008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386017744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387698960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387706064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387707024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1795351331.866063   22156 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1795351331.866406   22156 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1795351331.866846   22156 reader.cc:83] Reading SavedModel from: <HOME>\AppData\Local\Temp\tmp6nchyia4
+I0000 00:00:1795351331.868385   22156 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1795351331.868586   22156 reader.cc:147] Reading SavedModel debug info (if present) from: <HOME>\AppData\Local\Temp\tmp6nchyia4
+I0000 00:00:1795351331.881399   22156 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1795351331.952934   22156 loader.cc:220] Running initialization op on SavedModel bundle at path: <HOME>\AppData\Local\Temp\tmp6nchyia4
+I0000 00:00:1795351331.970709   22156 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 103869 microseconds.
+Saved artifact at '<HOME>\AppData\Local\Temp\tmpbh99fu4z'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 49, 10, 1), dtype=tf.float32, name='keras_tensor')
+Output Type:
+  TensorSpec(shape=(None, 12), dtype=tf.float32, name=None)
+Captures:
+  2520386019280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386023888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386020432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386021008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386017744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386024656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386025616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387698960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386026576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520386027344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387701456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387702992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387704912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387703952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387705680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387706064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2520387707024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+<HOME>\AppData\Local\Programs\Python\Python313\Lib\site-packages\tensorflow\lite\python\convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1795351332.806864   22156 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1795351332.807190   22156 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1795351332.807691   22156 reader.cc:83] Reading SavedModel from: <HOME>\AppData\Local\Temp\tmpbh99fu4z
+I0000 00:00:1795351332.809577   22156 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1795351332.809789   22156 reader.cc:147] Reading SavedModel debug info (if present) from: <HOME>\AppData\Local\Temp\tmpbh99fu4z
+I0000 00:00:1795351332.822321   22156 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1795351332.894273   22156 loader.cc:220] Running initialization op on SavedModel bundle at path: <HOME>\AppData\Local\Temp\tmpbh99fu4z
+I0000 00:00:1795351332.911700   22156 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 104015 microseconds.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+W0000 00:00:1795351333.352107   22156 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
+ds_cnn_s10_fp32.tflite: 99,248 B
+ds_cnn_s10_fp16.tflite: 58,744 B
+ds_cnn_s10_dr_int8.tflite: 46,400 B
+ds_cnn_s10_full_int8.tflite: 48,256 B
+
+==================== paper_split ====================
+<HOME>\AppData\Local\Programs\Python\Python313\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  fp32       acc  93.70%
+  fp16       acc  93.70%
+  dr_int8    acc  93.58%
+  full_int8  acc  93.27%
+
+N = 4888, bootstrap B = 10000
+variant      acc %    correct             95% CI
+fp32         93.70  4580/4888  [ 93.00,  94.37]
+fp16         93.70  4580/4888  [ 93.00,  94.37]
+dr_int8      93.58  4574/4888  [ 92.88,  94.25]
+full_int8    93.27  4559/4888  [ 92.55,  93.96]
+
+pair (A - B)            diff pp      95% paired CI  A-only  B-only  McNemar p
+fp32 - fp16                0.00  [  0.00,   0.00]       0       0      1.000
+fp32 - dr_int8             0.12  [ -0.08,   0.33]      16      10      0.327
+fp32 - full_int8           0.43  [  0.06,   0.80]      54      33      0.031
+fp16 - dr_int8             0.12  [ -0.08,   0.33]      16      10      0.327
+fp16 - full_int8           0.43  [  0.06,   0.80]      54      33      0.031
+dr_int8 - full_int8        0.31  [ -0.08,   0.68]      53      38      0.142
+
+If a paired CI contains 0 (and McNemar p > 0.05), do NOT rank those two variants.
+
+==================== official ====================
+  fp32       acc  93.33%
+  fp16       acc  93.33%
+  dr_int8    acc  93.21%
+  full_int8  acc  92.88%
+
+N = 4890, bootstrap B = 10000
+variant      acc %    correct             95% CI
+fp32         93.33  4564/4890  [ 92.64,  94.03]
+fp16         93.33  4564/4890  [ 92.64,  94.03]
+dr_int8      93.21  4558/4890  [ 92.52,  93.91]
+full_int8    92.88  4542/4890  [ 92.15,  93.60]
+
+pair (A - B)            diff pp      95% paired CI  A-only  B-only  McNemar p
+fp32 - fp16                0.00  [  0.00,   0.00]       0       0      1.000
+fp32 - dr_int8             0.12  [ -0.10,   0.35]      19      13      0.377
+fp32 - full_int8           0.45  [  0.06,   0.82]      55      33      0.025
+fp16 - dr_int8             0.12  [ -0.10,   0.35]      19      13      0.377
+fp16 - full_int8           0.45  [  0.06,   0.82]      55      33      0.025
+dr_int8 - full_int8        0.33  [ -0.06,   0.70]      54      38      0.117
+
+If a paired CI contains 0 (and McNemar p > 0.05), do NOT rank those two variants.

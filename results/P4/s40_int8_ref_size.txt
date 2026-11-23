@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 109548	     96	 107704	 217348	  35104	..\..\results\P4\s40_int8_ref.elf

@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 155028	     96	 107704	 262828	  402ac	..\..\results\P4\s40_int8_cmsis.elf

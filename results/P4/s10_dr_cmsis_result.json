@@ -1,0 +1,40 @@
+{
+ "done": 3735879682,
+ "burst_ms": 0,
+ "stage": 2,
+ "status": 1,
+ "arena_used": 0,
+ "arena_size": 102400,
+ "in_type": 0,
+ "out_type": 0,
+ "out_i8": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "out_f": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "log": "<HOME>\\tflm_p4\\tflite-micro\\tensorflow\\lite\\micro\\kernels\\cmsis_nn\\conv.cc Hybrid models are not supported on TFLite Micro.\r\nNode CONV_2D (number 0) failed to prepare with status 1\r\n",
+ "done_hex": "0xdead0002"
+}

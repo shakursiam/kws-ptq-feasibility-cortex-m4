@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.map
+*.npy
+obj*/
+.ipynb_checkpoints/

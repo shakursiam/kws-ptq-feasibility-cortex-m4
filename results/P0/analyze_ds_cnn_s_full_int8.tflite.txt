@@ -1,0 +1,163 @@
+
+
+Analyzing model 
+<HOME>/STM32Cube/Repository//Packs/STMicroelectronics/X-CUBE-AI/10.2.1/Utilities/windows/stedgeai.exe analyze --target stm32f4 --name ds_cnn_s -m G:/My Drive/icece2026_tinyml/ds_cnn_s_full_int8.tflite --compression none --verbosity 1 --workspace <HOME>/AppData/Local/Temp/mxAI_workspace995636497014007539488545758949723 --output <HOME>/.stm32cubemx/ds_cnn_s_output 
+ST Edge AI Core v2.2.0-20266 2adc00962 
+Creating c (debug) info json file <HOME>\.stm32cubemx\ds_cnn_s_output\ds_cnn_s_c_info.json 
+  
+ Exec/report summary (analyze) 
+ --------------------------------------------------------------------------------------------------------------------------------- 
+ model file         :   G:\My Drive\icece2026_tinyml\ds_cnn_s_full_int8.tflite                                                     
+ type               :   tflite                                                                                                     
+ c_name             :   ds_cnn_s                                                                                                   
+ compression        :   none                                                                                                       
+ options            :   allocate-inputs, allocate-outputs                                                                          
+ optimization       :   balanced                                                                                                   
+ target/series      :   stm32f4                                                                                                    
+ workspace dir      :   <HOME>\AppData\Local\Temp\mxAI_workspace995636497014007539488545758949723                             
+ output dir         :   <HOME>\.stm32cubemx\ds_cnn_s_output                                                                   
+ model_fmt          :   ss/sa per channel                                                                                          
+ model_name         :   ds_cnn_s_full_int8                                                                                         
+ model_hash         :   0xfec5f301ecce656227d3338a4ad48653                                                                         
+ params #           :   22,604 items (23.80 KiB)                                                                                   
+ --------------------------------------------------------------------------------------------------------------------------------- 
+ input 1/1          :   'serving_default_input_layer0', int8(1x49x40x1), 1.91 KBytes, QLinear(0.629359007,68,int8), activations    
+ output 1/1         :   'nl_11', int8(1x12), 12 Bytes, QLinear(0.003906250,-128,int8), activations                                 
+ macc               :   10,657,536                                                                                                 
+ weights (ro)       :   24,368 B (23.80 KiB) (1 segment) / -66,048(-73.0%) vs float model                                          
+ activations (rw)   :   64,896 B (63.38 KiB) (1 segment) *                                                                         
+ ram (total)        :   64,896 B (63.38 KiB) = 64,896 + 0 + 0                                                                      
+ --------------------------------------------------------------------------------------------------------------------------------- 
+ (*) 'input'/'output' buffers are allocated in the activations buffer 
+Computing AI RT data/code size (target=stm32f4).. 
+ Model name - ds_cnn_s_full_int8 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ m_id   layer (original)                  oshape                 param/size           macc                   connected to 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 0      serving_default_input_layer0 ()   [b:1,h:49,w:40,c:1] 
+        conv2d_0 (CONV_2D)                [b:1,h:25,w:20,c:64]   2,624/2,816     1,280,064   serving_default_input_layer0 
+        nl_0_nl (CONV_2D)                 [b:1,h:25,w:20,c:64]                      32,000                       conv2d_0 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 1      conv2d_1 (DEPTHWISE_CONV_2D)      [b:1,h:25,w:20,c:64]   640/832           288,064                        nl_0_nl 
+        nl_1_nl (DEPTHWISE_CONV_2D)       [b:1,h:25,w:20,c:64]                      32,000                       conv2d_1 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 2      conv2d_2 (CONV_2D)                [b:1,h:25,w:20,c:64]   4,160/4,352     2,048,064                        nl_1_nl 
+        nl_2_nl (CONV_2D)                 [b:1,h:25,w:20,c:64]                      32,000                       conv2d_2 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 3      conv2d_3 (DEPTHWISE_CONV_2D)      [b:1,h:25,w:20,c:64]   640/832           288,064                        nl_2_nl 
+        nl_3_nl (DEPTHWISE_CONV_2D)       [b:1,h:25,w:20,c:64]                      32,000                       conv2d_3 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 4      conv2d_4 (CONV_2D)                [b:1,h:25,w:20,c:64]   4,160/4,352     2,048,064                        nl_3_nl 
+        nl_4_nl (CONV_2D)                 [b:1,h:25,w:20,c:64]                      32,000                       conv2d_4 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 5      conv2d_5 (DEPTHWISE_CONV_2D)      [b:1,h:25,w:20,c:64]   640/832           288,064                        nl_4_nl 
+        nl_5_nl (DEPTHWISE_CONV_2D)       [b:1,h:25,w:20,c:64]                      32,000                       conv2d_5 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 6      conv2d_6 (CONV_2D)                [b:1,h:25,w:20,c:64]   4,160/4,352     2,048,064                        nl_5_nl 
+        nl_6_nl (CONV_2D)                 [b:1,h:25,w:20,c:64]                      32,000                       conv2d_6 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 7      conv2d_7 (DEPTHWISE_CONV_2D)      [b:1,h:25,w:20,c:64]   640/832           288,064                        nl_6_nl 
+        nl_7_nl (DEPTHWISE_CONV_2D)       [b:1,h:25,w:20,c:64]                      32,000                       conv2d_7 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 8      conv2d_8 (CONV_2D)                [b:1,h:25,w:20,c:64]   4,160/4,352     2,048,064                        nl_7_nl 
+        nl_8_nl (CONV_2D)                 [b:1,h:25,w:20,c:64]                      32,000                       conv2d_8 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 9      pool_9 (MEAN)                     [b:1,h:1,w:1,c:64]                        32,000                        nl_8_nl 
+        reshape_9_reshape (MEAN)          [b:1,c:64]                                                               pool_9 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 10     DSCNNS_1_dense_1_MatMul ()        [b:12,c:64]            768/768 
+        DSCNNS_1_dense_1_BiasAdd ()       [b:12]                 12/48 
+        gemm_10 (FULLY_CONNECTED)         [b:1,c:12]                                   780              reshape_9_reshape 
+                                                                                                  DSCNNS_1_dense_1_MatMul 
+                                                                                                 DSCNNS_1_dense_1_BiasAdd 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ 11     nl_11 (SOFTMAX)                   [b:1,c:12]                                   180                        gemm_10 
+ ------ --------------------------------- ---------------------- ------------- ----------- ------------------------------ 
+ model: macc=10,945,536 weights=24,368 activations=-- io=-- 
+ Number of operations per c-layer 
+ ------- ------ --------------------------- ------------ ------------ 
+ c_id    m_id   name (type)                          #op         type 
+ ------- ------ --------------------------- ------------ ------------ 
+ 0       0      conv2d_0 (Conv2D)              1,280,064   smul_s8_s8 
+ 1       1      conv2d_1_pad_before (Pad)              0   smul_s8_s8 
+ 2       1      conv2d_1 (Conv2D)                288,064   smul_s8_s8 
+ 3       2      conv2d_2 (Conv2D)              2,048,064   smul_s8_s8 
+ 4       3      conv2d_3_pad_before (Pad)              0   smul_s8_s8 
+ 5       3      conv2d_3 (Conv2D)                288,064   smul_s8_s8 
+ 6       4      conv2d_4 (Conv2D)              2,048,064   smul_s8_s8 
+ 7       5      conv2d_5_pad_before (Pad)              0   smul_s8_s8 
+ 8       5      conv2d_5 (Conv2D)                288,064   smul_s8_s8 
+ 9       6      conv2d_6 (Conv2D)              2,048,064   smul_s8_s8 
+ 10      7      conv2d_7_pad_before (Pad)              0   smul_s8_s8 
+ 11      7      conv2d_7 (Conv2D)                288,064   smul_s8_s8 
+ 12      8      conv2d_8 (Conv2D)              2,048,064   smul_s8_s8 
+ 13      9      pool_9 (Pool)                     32,000   smul_s8_s8 
+ 14      10     gemm_10 (Dense)                      780   smul_s8_s8 
+ 15      11     nl_11 (Nonlinearity)                 180     op_s8_s8 
+ ------- ------ --------------------------- ------------ ------------ 
+ total                                        10,657,536 
+ Number of operation types 
+ ---------------- ------------ ----------- 
+ operation type              #           % 
+ ---------------- ------------ ----------- 
+ smul_s8_s8         10,657,356      100.0% 
+ op_s8_s8                  180        0.0% 
+ Complexity report (model) 
+ ------ ------------------------------ ------------------------- ------------------------- ---------- 
+ m_id   name                           c_macc                    c_rom                     c_id 
+ ------ ------------------------------ ------------------------- ------------------------- ---------- 
+ 0      serving_default_input_layer0   ||||||||||        12.0%   ||||||||||        11.6%   [0] 
+ 1      conv2d_1                       |||                2.7%   |||                3.4%   [1, 2] 
+ 2      conv2d_2                       ||||||||||||||||  19.2%   ||||||||||||||||  17.9%   [3] 
+ 3      conv2d_3                       |||                2.7%   |||                3.4%   [4, 5] 
+ 4      conv2d_4                       ||||||||||||||||  19.2%   ||||||||||||||||  17.9%   [6] 
+ 5      conv2d_5                       |||                2.7%   |||                3.4%   [7, 8] 
+ 6      conv2d_6                       ||||||||||||||||  19.2%   ||||||||||||||||  17.9%   [9] 
+ 7      conv2d_7                       |||                2.7%   |||                3.4%   [10, 11] 
+ 8      conv2d_8                       ||||||||||||||||  19.2%   ||||||||||||||||  17.9%   [12] 
+ 9      pool_9                         |                  0.3%   |                  0.0%   [13] 
+ 10     DSCNNS_1_dense_1_MatMul        |                  0.0%   |||                3.3%   [14] 
+ 11     nl_11                          |                  0.0%   |                  0.0%   [15] 
+ ------ ------------------------------ ------------------------- ------------------------- ---------- 
+ macc=10,657,536 weights=24,368 act=64,896 ram_io=0 
+ Requested memory size by section - "stm32f4" target 
+ ------------------------------ -------- -------- ------- -------- 
+ module                             text   rodata    data      bss 
+ ------------------------------ -------- -------- ------- -------- 
+ NetworkRuntime1020_CM4_GCC.a     28,492        0       0        0 
+ ds_cnn_s.o                        1,152    3,681   5,912      300 
+ ds_cnn_s_data.o                      48       16      88        0 
+ lib (toolchain)*                      0        0       0        0 
+ ------------------------------ -------- -------- ------- -------- 
+ RT total**                       29,692    3,697   6,000      300 
+ ------------------------------ -------- -------- ------- -------- 
+ weights                               0   24,368       0        0 
+ activations                           0        0       0   64,896 
+ io                                    0        0       0        0 
+ ------------------------------ -------- -------- ------- -------- 
+ TOTAL                            29,692   28,065   6,000   65,196 
+ ------------------------------ -------- -------- ------- -------- 
+ *  toolchain objects (libm/libgcc*) 
+ ** RT AI runtime objects (kernels+infrastructure) 
+  Summary - "stm32f4" target 
+  -------------------------------------------------- 
+               FLASH (ro)      %*   RAM (rw)      % 
+  -------------------------------------------------- 
+  RT total         39,389   61.8%      6,300   8.8% 
+  -------------------------------------------------- 
+  TOTAL            63,757             71,196 
+  -------------------------------------------------- 
+  *  rt/total 
+Creating txt report file <HOME>\.stm32cubemx\ds_cnn_s_output\ds_cnn_s_analyze_report.txt 
+elapsed time (analyze): 15.129s 
+Model file:      ds_cnn_s_full_int8.tflite 
+Total Flash:     63757 B (62.26 KiB) 
+    Weights:     24368 B (23.80 KiB) 
+    Library:     39389 B (38.47 KiB) 
+Total Ram:       71196 B (69.53 KiB) 
+    Activations: 64896 B (63.38 KiB) 
+    Library:     6300 B (6.15 KiB) 
+    Input:       1960 B (1.91 KiB included in Activations) 
+    Output:      12 B (included in Activations) 
+Done 
+Analyze complete on AI model
